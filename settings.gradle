@@ -1,14 +1,25 @@
+// 添加插件仓库配置
+pluginManagement {
+    repositories {
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        maven { url = uri("https://maven.aliyun.com/repository/central") }
+        maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
+        maven { url = uri("https://mirrors.tuna.tsinghua.edu.cn/gradle-plugin/") }
+        gradlePluginPortal()
+    }
+}
+
 rootProject.name = 'intellij-obsolete-plugins'
-include 'j2me'
-include 'JsTestDriver:common', 'JsTestDriver:rt', 'JsTestDriver:plugin'
-include 'web:jslint', 'web:gjslint', 'web:jscs'
-include 'struts'
-include 'heroku', 'heroku:api', 'heroku:impl'
-//include 'ruby-motion'
-include 'applets'
-include 'compass'
-include 'generate-ant'
+//include 'j2me'
+//include 'JsTestDriver:common', 'JsTestDriver:rt', 'JsTestDriver:plugin'
+//include 'web:jslint', 'web:gjslint', 'web:jscs'
+//include 'struts'
+//include 'heroku', 'heroku:api', 'heroku:impl'
+////include 'ruby-motion'
+//include 'applets'
+//include 'compass'
+//include 'generate-ant'
 include 'cvs'
-include 'restClient-legacy'
-include 'IDEtalk'
+//include 'restClient-legacy'
+//include 'IDEtalk'
 

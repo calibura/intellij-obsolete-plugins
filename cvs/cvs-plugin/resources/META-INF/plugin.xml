@@ -2,24 +2,25 @@
   <name>CVS</name>
   <id>CVS</id>
   <vendor>JetBrains</vendor>
+  <idea-version since-build="241.14494" until-build="243.*"/>
   <resource-bundle>messages.CvsBundle</resource-bundle>
   <category>VCS Integration</category>
   <description>
       <![CDATA[
-      CVS support <a href="https://blog.jetbrains.com/idea/2020/11/cvs-integration-deprecation">is deprecated</a>, the plugin is provided as is.
-      The source code is available on <a href="https://github.com/JetBrains/intellij-obsolete-plugins/tree/master/cvs">GitHub</a><br><br>
+      CVS支持 <a href="https://blog.jetbrains.com/idea/2020/11/cvs-integration-deprecation">已经被弃用</a>，此插件按原样提供。
+      源代码可在 <a href="https://github.com/JetBrains/intellij-obsolete-plugins/tree/master/cvs">GitHub</a> 上获取<br><br>
 
-      Allows working with CVS version control system.
-      The following features are available:
+      允许使用CVS版本控制系统。
+      可用以下功能：
         <ul>
-        <li>Dedicated page under the Version Control node in the Settings/Preferences dialog.</li>
-        <li>When CVS is not enabled, it is still possible to browse, check out sources from and import into the available CVS repositories.</li>
-        <li>When CVS is enabled, the CVS node appears on the VCS menu, and on the context menu of the editor.
+        <li>设置/首选项对话框中版本控制节点下的专用页面。</li>
+        <li>当CVS未启用时，仍然可以浏览、从可用的CVS存储库中检出源代码以及导入到其中。</li>
+        <li>当启用CVS时，CVS节点出现在VCS菜单上和编辑器的上下文菜单中。
         </ul>
       ]]>
    </description>
 
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.vcs</depends>
 
   <extensions defaultExtensionNs="com.intellij">

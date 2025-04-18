@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 package com.intellij.cvsSupport2;
 
 import com.intellij.CvsBundle;
@@ -390,15 +390,15 @@ public final class CvsVcs2 extends AbstractVcs implements TransactionProvider, E
     return true;
   }
 
-  @NotNull
   @Override
+  @NotNull
   public <S> List<S> filterUniqueRoots(@NotNull List<S> in, @NotNull Function<? super S, ? extends VirtualFile> convertor) {
-    return in;
+    return FindAllRootsHelper.filterUniqueRoots(in, convertor);
   }
 
   @Override
   public @Nls @NotNull String getShortNameWithMnemonic() {
-    return CvsBundle.message("general.cvs.display.shortname.mnemonic");
+    return CvsBundle.getCvsDisplayName();
   }
 }
 

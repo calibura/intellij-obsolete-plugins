@@ -19,7 +19,7 @@ import com.intellij.CvsBundle;
 import com.intellij.cvsSupport2.config.ImportConfiguration;
 import com.intellij.cvsSupport2.keywordSubstitution.KeywordSubstitutionWrapper;
 import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.fileTypes.FileTypeRegistry;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
@@ -135,12 +135,13 @@ public class CustomizeKeywordSubstitutionDialog extends DialogWrapper {
   private List<FileExtension> collectFileTypes() {
     final Collection<FileExtension> storedExtensions = myImportConfiguration.getExtensions();
 
-    final ArrayList<FileExtension> result = new ArrayList<>(storedExtensions);
-    final FileType[] fileTypes = FileTypeManager.getInstance().getRegisteredFileTypes();
+    final List<FileExtension> result = new ArrayList<>(storedExtensions);
+    final FileTypeRegistry fileTypeRegistry = FileTypeRegistry.getInstance();
+    final FileType[] fileTypes = fileTypeRegistry.getRegisteredFileTypes();
     for (FileType fileType : fileTypes) {
-      final String[] extensions = FileTypeManager.getInstance().getAssociatedExtensions(fileType);
+      final String[] extensions = fileType.getDefaultExtension().split(",");
       for (String extension : extensions) {
-        final FileExtension fileExtension = new FileExtension(extension);
+        final FileExtension fileExtension = new FileExtension(extension.trim());
         if (!result.contains(fileExtension)) result.add(fileExtension);
       }
     }
